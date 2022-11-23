@@ -21,7 +21,7 @@ def movement ():
     
 
 def main ():
-    schedule.every(15).seconds.do(movement)
+    schedule.every(15).minutes.do(movement)
 
     while True:
         schedule.run_pending()
