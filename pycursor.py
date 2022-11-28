@@ -2,6 +2,7 @@ import pyautogui as pg
 import random
 import schedule
 import time
+import keyboard as kb
 
 def positions ():
     # sWidth, sHeight = pg.size()
@@ -21,11 +22,15 @@ def movement ():
     
 
 def main ():
-    schedule.every(15).minutes.do(movement)
+    schedule.every(10).seconds.do(movement)
 
     while True:
         schedule.run_pending()
         time.sleep(1)
+
+        if kb.is_pressed("q"):
+            print("q pressed, ending loop")
+            break
    
 
 if __name__ == '__main__':
